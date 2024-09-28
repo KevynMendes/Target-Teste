@@ -1,4 +1,4 @@
-1) TEC.1.html
+1) [TEC.1.html](https://github.com/KevynMendes/Target-Teste/blob/master/TEC.1.html)
 
 2) TEC.2.html
 
