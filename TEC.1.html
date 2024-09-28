@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Fibonacci</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 1rem;
+            color: #227;
+        }
+        input {
+            margin: 10px 0;
+            padding: 1rem;
+            width: 15rem;
+            border: 2px solid #227;
+            border-radius: 0625rem;
+            font-size: 1rem;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 0.625rem; 
+        }
+        button {
+            padding: 1rem 1rem;
+            background-color:#227;
+            color: white;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        p {
+            margin-top: 1rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 1rem;
+        }
+        .success {
+            color: #fff;
+            background-color: #45a049;
+            padding: 1rem;
+        }
+        .error {
+            color: #fff;
+            background-color: #f44336;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Fibonacci</h1>
+    <input type="number" id="numberInput" placeholder="Informe um número">
+    <div class="button-container">
+        <button onclick="checkFibonacci()">Verificar</button>
+        <button onclick="refreshInput()">Refresh</button>
+    </div>
+    <p id="result"></p>
+
+    <script>
+        function fibonacciSequence(n) {
+            let fibSequence = [0, 1];
+            while (fibSequence[fibSequence.length - 1] < n) {
+                const nextValue = fibSequence[fibSequence.length - 1] + fibSequence[fibSequence.length - 2];
+                fibSequence.push(nextValue);
+            }
+            return fibSequence;
+        }
+
+        function checkFibonacci() {
+            const number = parseInt(document.getElementById('numberInput').value);
+            const fibSequence = fibonacciSequence(number);
+            const resultElement = document.getElementById('result');
+
+            if (fibSequence.includes(number)) {
+                resultElement.innerText = `O número ${number} pertence à sequência de Fibonacci.`;
+                resultElement.className = 'success';
+            } else {
+                resultElement.innerText = `O número ${number} não pertence à sequência de Fibonacci.`;
+                resultElement.className = 'error';
+            }
+        }
+
+        function refreshInput() {
+            document.getElementById('numberInput').value = '';
+            document.getElementById('result').innerText = '';
+            document.getElementById('result').className = '';
+        }
+    </script>
+</body>
+</html>

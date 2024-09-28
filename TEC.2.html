@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Letras 'a'</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 1rem;
+            color: #227; 
+            font-size: 2rem;
+        }
+        input {
+            margin: 1rem 0;
+            padding: 1rem;
+            width: 25rem;
+            border: 2px solid #227;
+            border-radius: 1rem;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .button-container {
+            display: flex;
+            gap: 0.625rem;
+        }
+        button {
+            padding: 1rem 1rem;
+            background-color: #227;
+            color: white;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+    
+        p {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de Letras 'a'</h1>
+    <input type="text" id="inputString" placeholder="Digite uma string">
+    <button onclick="countLetters()">Contar Letras 'a'</button>
+    <p id="result"></p>
+
+    <script>
+        function countLetters() {
+            const input = document.getElementById('inputString').value;
+            const lowerCaseCount = (input.match(/a/g) || []).length; // Conta 'a'
+            const upperCaseCount = (input.match(/A/g) || []).length; // Conta 'A'
+            const totalCount = lowerCaseCount + upperCaseCount;
+
+            const resultElement = document.getElementById('result');
+            if (totalCount > 0) {
+                resultElement.innerText = `A letra 'a' aparece ${totalCount} vez(es) na string.`;
+            } else {
+                resultElement.innerText = "A letra 'a' não foi encontrada.";
+            }
+        }
+    </script>
+</body>
+</html>
