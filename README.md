@@ -1,6 +1,6 @@
 1) [TEC.1.html](https://github.com/KevynMendes/Target-Teste/blob/master/TEC.1.html)
 
-2) TEC.2.html
+2) [TEC.2.html](https://github.com/KevynMendes/Target-Teste/blob/master/TEC.2.html)
 
 3) Começando com K em 1 e SOMA em 0, ele incrementa K antes de somar. Portanto, os valores somados são 2, 3, 4 até 12. Ao final, a SOMA totaliza 66.
 
